@@ -1,0 +1,39 @@
+{
+  "name": "moovone-excited-cell",
+  "version": "1.0.0",
+  "description": "test technique MoovOne",
+  "main": "index.js",
+  "author": "Koudjo AHOLOU <ah.koudjo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "yarn run jest",
+    "watchmode": "yarn test --watchAll=true",
+    "lint": "eslint .",
+    "compileBabel": "yarn babel ./module/module.js --out-file ./compile/script-compiled.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test --watchAll=false"
+    }
+  },
+  "lint-staged": {
+    "*.+(js)": [
+      "eslint . --fix"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "husky": "^4.3.0",
+    "jest": "^26.6.1",
+    "lint-staged": "^10.4.2"
+  }
+}
